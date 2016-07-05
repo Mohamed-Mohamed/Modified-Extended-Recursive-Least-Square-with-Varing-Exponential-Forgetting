@@ -3,13 +3,6 @@
 % mohamed.atyya94@eng-st.cu.edu.eg
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 close all; clear all; clc;
-% this programe is used to estimate the parameter of 
-%                     0.5
-% G(s) = -----------------    
-%               s^2 + s + 1 
-%                0.009335 z + 0.008732
-% G(z) = ---------------------------------------------           ; T = 0.2
-%                z^2 - 1.783 z + 0.8187
 %% Plot option
 % if Plot(1) = 0  --> no plot needed
 % if Plot(1) = 1  -->  plot needed
