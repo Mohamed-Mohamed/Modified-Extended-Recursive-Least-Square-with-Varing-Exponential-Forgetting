@@ -66,7 +66,11 @@ for i=2:length(y)
         epslon_p(i)=y(i)-phiT(i,:)*theta_hat(:,i);
         P{i}=(eye(na+nb+nc+1)*lambda(i-1)-K1{i}*phiT(i,:))*P{i-1};
         if i > N
-                lambda(i)=1-(1-phiT(i,:)*K1{i})*epslon_p(i)^2/(std(epslon_p)^2*mean(epslon_p));
+                lambdan=1-(1-phiT(i,:)*K1{i})*epslon_n(i)^2/(std(epslon_n)^2*mean(epslon_n));
+                lambdap=1-(1-phiT(i,:)*K1{i})*epslon_p(i)^2/(std(epslon_p)^2*mean(epslon_p));
+                Sn=std(epslon_n)^2/(std(epslon_n)^2+std(epslon_p)^2);
+                Sp=std(epslon_p)^2/(std(epslon_n)^2+std(epslon_p)^2);
+                lambda(i)=Sn*lambdan+Sp*lambdap;
         else
                 lambda(i)=lambda(i-1);
         end
